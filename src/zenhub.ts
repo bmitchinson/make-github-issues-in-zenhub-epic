@@ -1,16 +1,18 @@
-import { issue } from './index';
+import { GHCreateIssueResponse } from './github';
 
-export const assignZHEpic = async (issue: issue): Promise<void> => {
+export const assignZHEpic = async ({
+    data: { title, id },
+}: GHCreateIssueResponse): Promise<void> => {
     // todo: use zh to assign epic
-    console.log(`🏔  - Assigning ${issue.title}`);
+    console.log(`🏔  - Assigning ${title}`);
     Promise.resolve().then(() => {
-        console.log(`🏔  - ${issue.title} assigned to epic`);
+        console.log(`🏔  - ${title} assigned to epic`);
     });
 };
 
-export const validateZHEpicExists = async (issueID: number): Promise<void> => {
+export const validateZHEpicExists = async (epicID: number): Promise<void> => {
     Promise.resolve().then(() => {
         // todo: use zh to check epic
-        console.log(`🏔  - Epic ID: ${issueID} exists`);
+        console.log(`🏔  - Epic ID: ${epicID} exists`);
     });
 };

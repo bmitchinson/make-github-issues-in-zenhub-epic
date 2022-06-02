@@ -8,6 +8,9 @@ import { assignZHEpic, validateZHEpicExists } from './zenhub';
 
 export type issue = typeof issues[0];
 
+// todo: check gh credentials against desired repo
+// todo: check zenhub credentials against desired workspace
+
 validateZHEpicExists(zenhubEpicID).then(() => {
     // todo: a blocking describe and confirm changes step
     //   body abbreviate since they'll be lon...
