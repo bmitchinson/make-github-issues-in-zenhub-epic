@@ -3,5 +3,6 @@
         { "title": "Test issue 1" },
         { "title": "Test issue 2", "body": "override" }
     ],
-    "defaultIssueBody": "default"
+    "defaultIssueBody": "default",
+    "zenhubEpicID": 1
 }
