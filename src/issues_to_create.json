@@ -1,7 +1,7 @@
 {
     "issues": [
-        { "title": "test issue 1" },
-        { "title": "test issue 2", "body": "override" }
+        { "title": "Test issue 1" },
+        { "title": "Test issue 2", "body": "override" }
     ],
     "defaultIssueBody": "default"
 }
