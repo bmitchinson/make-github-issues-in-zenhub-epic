@@ -1,4 +1,4 @@
 import 'dotenv/config';
 import * as env from 'env-var';
 
-export const HELLO = env.get('HELLO').required().default('Mars').asString();
+export const GITHUB_PAT = env.get('GITHUB_PAT').required().asString();
