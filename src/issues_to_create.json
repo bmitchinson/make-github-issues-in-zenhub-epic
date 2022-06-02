@@ -1,8 +1,5 @@
 {
-    "issues": [
-        { "title": "Test issue 1" },
-        { "title": "Test issue 2", "body": "override" }
-    ],
+    "issues": [{ "title": "Test issue 1" }, { "title": "Test issue 2" }],
     "defaultIssueBody": "default",
     "zenhubEpicID": 1
 }

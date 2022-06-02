@@ -9,6 +9,8 @@ import { assignZHEpic, validateZHEpicExists } from './zenhub';
 export type issue = typeof issues[0];
 
 validateZHEpicExists(zenhubEpicID).then(() => {
+    // todo: a blocking describe and confirm changes step
+    //   body abbreviate since they'll be lon...
     issues.forEach((issue) => {
         createGHIssue(issue, defaultIssueBody)
             .then(assignZHEpic)
