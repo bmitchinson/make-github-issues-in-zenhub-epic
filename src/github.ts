@@ -1,6 +1,5 @@
 import { issue } from './index';
-import { repo, owner } from './issues_to_create.json';
-import { GITHUB_PAT } from './app_configuration';
+import { GITHUB_PAT, GITHUB_OWNER, GITHUB_REPO } from './app_configuration';
 import { Octokit, RestEndpointMethodTypes } from '@octokit/rest';
 
 export type GHCreateIssueResponse = RestEndpointMethodTypes['issues']['create']['response'];
@@ -10,20 +9,17 @@ const octokit = new Octokit({
     userAgent: 'mitchinson.dev ghIssuesCreator',
 });
 
-export const createGHIssue = async (
-    issue: issue,
-    defaultIssueBody: string,
-): Promise<GHCreateIssueResponse> => {
+export const createGHIssue = async (issue: issue, defaultIssueBody: string) => {
     console.log(`📝 - Creating issue: ${issue.title}`);
     return octokit.rest.issues
         .create({
-            repo,
-            owner,
+            owner: GITHUB_OWNER,
+            repo: GITHUB_REPO,
             title: issue.title,
             body: defaultIssueBody,
         })
         .then((res) => {
             console.log(`📝 - Created issue: ${res.data.title}`);
-            return res;
+            return res.data.number;
         });
 };
