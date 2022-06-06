@@ -10,7 +10,7 @@ export type issue = typeof issues[0];
 // todo: finish validateZHEpicExists
 // validateZHEpicExists(zenhubEpicID).then(() => {
 // todo: a blocking describe and confirm changes step
-//   body abbreviate since they'll be lon...
+// todo: import md file as default body
 
 const createIssuesQueue = [] as Promise<number>[];
 const createAllIssues = async () => Promise.all(createIssuesQueue);
@@ -20,5 +20,5 @@ issues.forEach((issue) => {
 
 createAllIssues()
     .then(assignIssuesToEpic)
-    .then((e) => console.log('✅ - Issues created + assigned correctly'))
+    .then(() => console.log('✅ - Issues created + assigned correctly'))
     .catch((e) => console.error('❌', e));
